@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tm7-9E-DBA">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -13,12 +13,12 @@
             <objects>
                 <viewController id="Tm7-9E-DBA" customClass="LoginViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OYk-iR-AdR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yw-9L-Bk7">
-                                <rect key="frame" x="95" y="306.5" width="185" height="54"/>
-                                <color key="backgroundColor" red="0.43309477194641277" green="0.7259622690631552" blue="0.90588943169378233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="114.5" y="421" width="185" height="54"/>
+                                <color key="backgroundColor" red="0.14466944339999999" green="0.62819689509999999" blue="0.94906121489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="CNS-OS-kXE"/>
                                     <constraint firstAttribute="height" constant="54" id="n29-Ny-0V6"/>
@@ -32,21 +32,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Twitter!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6f-1e-bLU">
-                                <rect key="frame" x="30" y="43" width="315" height="44"/>
+                                <rect key="frame" x="49.5" y="87" width="315" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="t8Q-wi-tgM"/>
                                     <constraint firstAttribute="height" constant="44" id="xjD-Vk-7f7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="34"/>
-                                <color key="textColor" red="0.43309477190000001" green="0.72596226909999995" blue="0.90588943170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.14466944339999999" green="0.62819689509999999" blue="0.94906121489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="xQL-Hs-Zgj">
+                                <rect key="frame" x="99" y="171" width="200" height="200"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xQL-Hs-Zgj" firstAttribute="top" secondItem="B6f-1e-bLU" secondAttribute="bottom" constant="40" id="1x3-fd-ekU"/>
                             <constraint firstItem="B6f-1e-bLU" firstAttribute="centerX" secondItem="OYk-iR-AdR" secondAttribute="centerX" id="FRQ-zq-oh1"/>
+                            <constraint firstItem="8yw-9L-Bk7" firstAttribute="top" secondItem="xQL-Hs-Zgj" secondAttribute="bottom" constant="50" id="Knm-Ze-hYI"/>
                             <constraint firstItem="B6f-1e-bLU" firstAttribute="top" secondItem="QCf-SM-Fmp" secondAttribute="top" constant="43" id="Ldr-Pu-0M6"/>
+                            <constraint firstItem="QCf-SM-Fmp" firstAttribute="trailing" secondItem="xQL-Hs-Zgj" secondAttribute="trailing" constant="115" id="N8V-hl-ZVo"/>
                             <constraint firstItem="8yw-9L-Bk7" firstAttribute="centerY" secondItem="OYk-iR-AdR" secondAttribute="centerY" id="RwG-PM-sK3"/>
+                            <constraint firstItem="xQL-Hs-Zgj" firstAttribute="leading" secondItem="QCf-SM-Fmp" secondAttribute="leading" constant="99" id="UwV-yS-Imy"/>
                             <constraint firstItem="8yw-9L-Bk7" firstAttribute="centerX" secondItem="OYk-iR-AdR" secondAttribute="centerX" id="fM6-v7-s8S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QCf-SM-Fmp"/>
@@ -64,15 +71,15 @@
             <objects>
                 <tableViewController id="gn0-mi-EU8" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GL2-zT-QlS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="zVy-Cs-cwz" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zVy-Cs-cwz" id="ajE-ND-f9w">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwH-wV-DSr">
@@ -82,7 +89,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYc-Zv-cCh">
-                                            <rect key="frame" x="73" y="33" width="286" height="76"/>
+                                            <rect key="frame" x="73" y="33" width="321" height="76"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -136,9 +143,9 @@
             <objects>
                 <navigationController id="vtt-XZ-A9E" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c6w-ib-ynv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.43309477190000001" green="0.72596226909999995" blue="0.90588943170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.14466944339999999" green="0.62819689509999999" blue="0.94906121489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -152,4 +159,7 @@
             <point key="canvasLocation" x="945" y="170"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TwitterLogoBlue" width="200" height="200"/>
+    </resources>
 </document>
