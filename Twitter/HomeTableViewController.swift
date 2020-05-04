@@ -21,6 +21,13 @@ class HomeTableViewController: UITableViewController {
         loadTweets()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadMoreTweets()
     }
     
     @objc func loadTweets() {
@@ -78,6 +85,14 @@ class HomeTableViewController: UITableViewController {
         
     }
     
+//    func getRelativeTime(timeString: String) -> String{
+//        let time: Date
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+//        time = dateFormatter.date(from: timeString)
+//        return time.timeAgoDisplay()
+//    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
@@ -85,6 +100,7 @@ class HomeTableViewController: UITableViewController {
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
+        cell.timeLabel.text = "15 seconds ago" as? String
         
         let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
         let data = try? Data(contentsOf: imageUrl!)
@@ -92,6 +108,10 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }
@@ -108,5 +128,17 @@ class HomeTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return tweetArray.count
     }
-
 }
+
+//extension Date {
+//    func timeAgoDisplay() -> String{
+//        let secondsAgo = Int(Date().timeIntervalSince(self))
+//        let minute = 60
+//        let hour = 60 * minute
+//        let day = 24 * hour
+//        let week = 7 * day
+//        if secondsAgo < minute {
+//
+//        }
+//    }
+//}
