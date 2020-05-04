@@ -8,14 +8,15 @@
 
 import UIKit
 
-class TweetViewController: UIViewController {
+class TweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
+    @IBOutlet weak var characterCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tweetTextView.becomeFirstResponder()
-
+        tweetTextView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -33,6 +34,16 @@ class TweetViewController: UIViewController {
         } else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let characterLimit = 140
+        
+        let newText = NSString(string: tweetTextView.text!).replacingCharacters(in: range, with: text)
+        
+        characterCount.text = "\(newText.count) characters"
+                
+        return newText.count < characterLimit
     }
     
     /*
